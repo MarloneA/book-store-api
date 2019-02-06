@@ -1,0 +1,39 @@
+{
+  "name": "book-store-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/loicemeyo/book-store-api.git",
+  "author": "Loice Meyo <loicemeyo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "fancy-log": "^1.3.3",
+    "joi": "^14.3.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.5.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.39.0",
+    "sequelize-cli": "^5.4.0",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "NODE_ENV=development nodemon server.js",
+    "test": "NODE_ENV=test jest",
+    "db:seed": "node_modules/.bin/sequelize db:seed:all",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:rollback": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "db:rollmigrate": "yarn db:rollback && yarn db:migrate && yarn db:seed",
+    "migration:generate": "node_modules/.bin/sequelize migration:generate"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^24.0.0",
+    "nodemon": "^1.18.4",
+    "supertest": "^3.4.2"
+  }
+}
